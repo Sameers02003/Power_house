@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # ---- DATABASE CONNECTION ----
 @st.cache_data
 def load_data():
-    conn = sqlite3.connect("power_pulse.db")
+    conn = sqlite3.connect("power_pulse_small.db")
     query = "SELECT * FROM power_consumption ORDER BY Datetime DESC LIMIT 10000"
     df = pd.read_sql(query, conn)
     conn.close()
